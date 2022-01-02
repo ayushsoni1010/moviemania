@@ -1,4 +1,5 @@
 import React from "react";
+
 // API
 import API from "../API/API";
 
@@ -7,20 +8,27 @@ import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config/config";
 
 // Components
 import HeroImage from "./HeroImage";
-
-// Hook
-import { useHomeFetch } from "../hooks/useHomeFetch";
-
-// Image: if API fails to render image then the fallback image used this one
-import NoImage from "../images/no_image.jpg";
 import Grid from "./Grid";
 import Thumbnail from "./Thumbnail";
 import Spinner from "./Spinner";
 import SearchBar from "./SearchBar";
+import Button from "../components/Button";
+
+// Hooks
+import { useHomeFetch } from "../hooks/useHomeFetch";
+
+// Image: if API fails to render image then the fallback image used this one
+import NoImage from "../images/no_image.jpg";
 
 const Home = () => {
-  const { state, loading, error, searchTerm, setSearchTerm } = useHomeFetch();
+  const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } =
+    useHomeFetch();
+
   console.log(state);
+
+  if (error) {
+    return <h1>Something Went Wrong...</h1>;
+  }
   return (
     <React.Fragment>
       {!searchTerm && state.results[0] ? (
@@ -48,7 +56,11 @@ const Home = () => {
         ))}
       </Grid>
 
-      <Spinner />
+      {loading && <Spinner />}
+
+      {state.page < state.total_pages && !loading && (
+        <Button callback={() => setIsLoadingMore(true)}>Load More</Button>
+      )}
     </React.Fragment>
   );
 };
