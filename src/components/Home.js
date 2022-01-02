@@ -19,11 +19,11 @@ import Spinner from "./Spinner";
 import SearchBar from "./SearchBar";
 
 const Home = () => {
-  const { state, loading, error, setSearchTerm } = useHomeFetch();
+  const { state, loading, error, searchTerm, setSearchTerm } = useHomeFetch();
   console.log(state);
   return (
     <React.Fragment>
-      {state.results[0] ? (
+      {!searchTerm && state.results[0] ? (
         <HeroImage
           image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
           title={state.results[0].original_title}
@@ -31,9 +31,9 @@ const Home = () => {
         />
       ) : null}
 
-        <SearchBar setSearchTerm={setSearchTerm}></SearchBar>
+      <SearchBar setSearchTerm={setSearchTerm}></SearchBar>
 
-      <Grid header="Popular Movies">
+      <Grid header={searchTerm ? "Search Result" : "Popular Movies"}>
         {state.results.map((movie) => (
           <Thumbnail
             key={movie.id}
@@ -48,7 +48,7 @@ const Home = () => {
         ))}
       </Grid>
 
-      <Spinner/>
+      <Spinner />
     </React.Fragment>
   );
 };
