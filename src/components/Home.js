@@ -14,6 +14,7 @@ import { useHomeFetch } from "../hooks/useHomeFetch";
 // Image: if API fails to render image then the fallback image used this one
 import NoImage from "../images/no_image.jpg";
 import Grid from "./Grid";
+import Thumbnail from "./Thumbnail";
 
 const Home = () => {
   const { state, loading, error } = useHomeFetch();
@@ -30,7 +31,16 @@ const Home = () => {
 
       <Grid header="Popular Movies">
         {state.results.map((movie) => (
-          <div key={movie.id}>{movie.title}</div>
+          <Thumbnail
+            key={movie.id}
+            clickable
+            image={
+              movie.poster_path
+                ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
+                : NoImage
+            }
+            movieId={movie.id}
+          />
         ))}
       </Grid>
     </React.Fragment>
