@@ -6,7 +6,7 @@ import {
   REQUEST_TOKEN_URL,
   LOGIN_URL,
   SESSION_ID_URL,
-} from "./config";
+} from "../config/config";
 
 const defaultConfig = {
   method: "POST",

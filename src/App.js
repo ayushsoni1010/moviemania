@@ -1,5 +1,5 @@
 import React from "react";
-import { GlobalStyle } from './GlobalStyle';
+import { GlobalStyle } from './styles/global/GlobalStyle';
 import Header from "./components/Header";
 import Home from "./components/Home";
 
