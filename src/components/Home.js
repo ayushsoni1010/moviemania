@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 // API
 import API from "../API";
+
 // Config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config";
 
@@ -12,6 +13,7 @@ import { useHomeFetch } from "../hooks/useHomeFetch";
 
 // Image: if API fails to render image then the fallback image used this one
 import NoImage from "../images/no_image.jpg";
+import Grid from "./Grid";
 
 const Home = () => {
   const { state, loading, error } = useHomeFetch();
@@ -25,6 +27,12 @@ const Home = () => {
           text={state.results[0].overview}
         />
       ) : null}
+
+      <Grid header="Popular Movies">
+        {state.results.map((movie) => (
+          <div key={movie.id}>{movie.title}</div>
+        ))}
+      </Grid>
     </React.Fragment>
   );
 };
