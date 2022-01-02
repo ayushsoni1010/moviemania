@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import API from "../API";
 
 const intialState = {
-    page: 0,
-    results: [],
-    total_pages: 0,
-    total_results: 0
-}
+  page: 0,
+  results: [],
+  total_pages: 0,
+  total_results: 0,
+};
 
 export const useHomeFetch = () => {
+  const [searchTerm, setSearchTerm] = useState("");
   const [state, setState] = useState(intialState);
   const [loading, setLoading] = useState(false);
   const [error, setEror] = useState(false);
@@ -32,6 +33,6 @@ export const useHomeFetch = () => {
   useEffect(() => {
     fetchMovies(1);
   }, []);
-    
-    return {state , loading , error}
+
+  return { state, loading, error, setSearchTerm };
 };

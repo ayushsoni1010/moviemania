@@ -16,9 +16,10 @@ import NoImage from "../images/no_image.jpg";
 import Grid from "./Grid";
 import Thumbnail from "./Thumbnail";
 import Spinner from "./Spinner";
+import SearchBar from "./SearchBar";
 
 const Home = () => {
-  const { state, loading, error } = useHomeFetch();
+  const { state, loading, error, setSearchTerm } = useHomeFetch();
   console.log(state);
   return (
     <React.Fragment>
@@ -29,6 +30,8 @@ const Home = () => {
           text={state.results[0].overview}
         />
       ) : null}
+
+        <SearchBar setSearchTerm={setSearchTerm}></SearchBar>
 
       <Grid header="Popular Movies">
         {state.results.map((movie) => (
