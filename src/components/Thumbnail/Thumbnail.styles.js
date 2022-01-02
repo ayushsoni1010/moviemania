@@ -8,16 +8,16 @@ export const Image = styled.img`
   object-fit: cover;
   animation: animateThumb 0.5s;
 
-    :hover{
-        opacity: 0.8;
-    }
+  :hover {
+    opacity: 0.8;
+  }
 
   @keyframes animateThumb {
-      from{
-          opacity: 0;
-      }
-      to{
-          opacity: 1;
-      }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
