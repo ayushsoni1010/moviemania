@@ -5,11 +5,11 @@ export const GlobalStyle = createGlobalStyle`
         --maxWidth: 1280px;
         --white: #fff;
         --lightGray: #eee;
-        --mediumGray; #353535;
+        --mediumGray: #353535;
         --darkGray: #1c1c1c;
         --fontSuperBig: 2.5rem;
         --fontBig: 1.5rem;
-        --fontMedium; 1.2rem;
+        --fontMedium: 1.2rem;
         --fontSmall: 1rem;
     }
 
