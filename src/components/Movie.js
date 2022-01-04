@@ -9,6 +9,7 @@ import Grid from "./Grid";
 import Spinner from "./Spinner";
 import BreadCrump from "./BreadCrump";
 import MovieInfo from "./MovieInfo";
+import MovieInfoBar from "./MovieInfoBar";
 
 // Hooks
 import { useMovieFetch } from "../hooks/useMovieFetch";
@@ -31,6 +32,11 @@ const Movie = () => {
     <React.Fragment>
       <BreadCrump movieTitle={movie.original_title} />
       <MovieInfo movie={movie} />
+      <MovieInfoBar
+        time={movie.runtime}
+        budget={movie.budget}
+        revenue={movie.revenue}
+      />
     </React.Fragment>
   );
 };
