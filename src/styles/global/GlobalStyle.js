@@ -9,8 +9,8 @@ export const GlobalStyle = createGlobalStyle`
         --darkGray: #1c1c1c;
         --fontSuperBig: 2.5rem;
         --fontBig: 1.5rem;
-        --fontMedium: 1.2rem;
-        --fontSmall: 1rem;
+        --fontMedium: 1.1rem;
+        --fontSmall: 0.9rem;
     }
 
     *{
