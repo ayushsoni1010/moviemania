@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 // Styles
 import { Wrapper } from "./Button.styles";
 
@@ -10,6 +11,11 @@ const Button = ({ children, callback }) => {
       </Wrapper>
     </React.Fragment>
   );
+};
+
+Button.propTypes = {
+  children: PropTypes.any,
+  callback: PropTypes.func,
 };
 
 export default Button;
