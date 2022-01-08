@@ -11,15 +11,15 @@ type Props = {
   movieHeight?: boolean;
 }
 
-const Thumbnail: React.FC<Props> = ({ image, movieId, clickable }) => {
+const Thumbnail: React.FC<Props> = ({ image, movieId, clickable, movieHeight }) => {
   return (
     <React.Fragment>
       {clickable ? (
         <Link to={`/${movieId}`}>
-          <Image src={image} alt="movie-thumb" movieHeight={true} />
+          <Image src={image} alt="movie-thumb" movieHeight={movieHeight} />
         </Link>
       ) : (
-        <Image src={image} alt="movie-thumb" movieHeight={true} />
+          <Image src={image} alt="movie-thumb" movieHeight={movieHeight} />
       )}
     </React.Fragment>
   );
