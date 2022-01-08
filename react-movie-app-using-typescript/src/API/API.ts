@@ -16,13 +16,6 @@ const defaultConfig = {
 };
 
 // Types
-export type Movies = {
-  page: number;
-  results: Movie[];
-  total_pages: number;
-  total_results: number;
-}
-
 export type Movie = {
   backdrop_path: string;
   id: number;
@@ -36,29 +29,33 @@ export type Movie = {
   budget: number;
   runtime: number;
   revenue: number;
-}
+};
 
-export type Credits = {
-  id: number;
-  cast: Cast[];
-  crew: Crew[];
-}
+export type Movies = {
+  page: number;
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
+};
 
 export type Cast = {
   character: string;
   credit_id: string;
   name: string;
   profile_path: string;
-
-  // for shortcut
-  // [property: string]: string;
-}
+};
 
 export type Crew = {
   job: string;
   name: string;
   credit_id: number;
-}
+};
+
+export type Credits = {
+  id: number;
+  cast: Cast[];
+  crew: Crew[];
+};
 
 const apiSettings = {
   fetchMovies: async (searchTerm:string, page: number): Promise<Movies> => {
@@ -67,11 +64,11 @@ const apiSettings = {
       : `${POPULAR_BASE_URL}&page=${page}`;
     return await (await fetch(endpoint)).json();
   },
-  fetchMovie: async (movieId: number): Promise<Movie> => {
+  fetchMovie: async (movieId: string): Promise<Movie> => {
     const endpoint:string = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
     return await (await fetch(endpoint)).json();
   },
-  fetchCredits: async (movieId: number): Promise<Credits> => {
+  fetchCredits: async (movieId: string): Promise<Credits> => {
     const creditsEndpoint:string = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
     return await (await fetch(creditsEndpoint)).json();
   },

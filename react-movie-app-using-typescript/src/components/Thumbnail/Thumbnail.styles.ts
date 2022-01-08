@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const Image = styled.img`
+// Types
+type Props = {
+  movieHeight: boolean;
+}
+
+export const Image = styled.img<Props>`
   width: 100%;
   max-width: 720px;
   border-radius: 20px;

@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+// Types
+type Props = {
+  image: string;
+}
+
+export const Wrapper = styled.div<Props>`
   background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0) 41%,

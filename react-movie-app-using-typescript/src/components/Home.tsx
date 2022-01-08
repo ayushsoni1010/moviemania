@@ -1,8 +1,5 @@
 import React from "react";
 
-// API
-import API from "../API/API";
-
 // Config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from "../config/config";
 
@@ -12,7 +9,7 @@ import Grid from "./Grid";
 import Thumbnail from "./Thumbnail";
 import Spinner from "./Spinner";
 import SearchBar from "./SearchBar";
-import Button from "../components/Button";
+import Button from "./Button";
 
 // Hooks
 import { useHomeFetch } from "../hooks/useHomeFetch";
@@ -20,7 +17,7 @@ import { useHomeFetch } from "../hooks/useHomeFetch";
 // Image: if API fails to render image then the fallback image used this one
 import NoImage from "../images/no_image.jpg";
 
-const Home = () => {
+const Home: React.FC = () => {
   const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } =
     useHomeFetch();
 
@@ -42,7 +39,7 @@ const Home = () => {
       <SearchBar setSearchTerm={setSearchTerm}></SearchBar>
 
       <Grid header={searchTerm ? "Search Result" : "Popular Movies"}>
-        {state.results.map((movie) => (
+        {state.results.map(movie => (
           <Thumbnail
             key={movie.id}
             clickable
@@ -51,6 +48,7 @@ const Home = () => {
                 ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
                 : NoImage
             }
+            movieHeight={false}
             movieId={movie.id}
           />
         ))}
