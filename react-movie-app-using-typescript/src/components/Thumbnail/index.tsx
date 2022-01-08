@@ -6,9 +6,9 @@ import { Image } from "./Thumbnail.styles";
 // Types
 type Props = {
   image: string;
-  movieId: number;
+  movieId?: number;
   clickable: boolean;
-  movieHeight: boolean;
+  movieHeight?: boolean;
 }
 
 const Thumbnail: React.FC<Props> = ({ image, movieId, clickable }) => {

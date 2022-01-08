@@ -30,8 +30,6 @@ const MovieInfo:React.FC<Props> = ({ movie }) => (
             ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
             : NoImage
         }
-        movieId={movie.id}
-        movieHeight={false}
         clickable={false}
       />
       <Text>
