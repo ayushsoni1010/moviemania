@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // Types
 type Props = {
-  movieHeight: boolean;
+  movieHeight?: boolean;
 }
 
 export const Image = styled.img<Props>`
