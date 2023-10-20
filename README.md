@@ -3,10 +3,10 @@
   <b>Lights, camera, action! Discover the latest movies and actors at your fingertips.</b>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/Tech%20Stack-React%20%7C%20Styled_Components%20%7C%20TMDB_API%20%7C%20TypeScript%20%7C%20Supabase%20%7C%20Shadcn-0288d1.svg" alt="Tech Stack" />
+  <img src="https://img.shields.io/badge/Tech%20Stack-React%20%7C%20Styled_Components%20%7C%20TMDB_API%20%7C%20TypeScript%20%7C%20JavaScript-0288d1.svg" alt="Tech Stack" />
 </p>
 <p align="center">
-  <i>Get instant stats through TMDB API-powered movie app, beautifully crafted with React and styled-components 💅</i>
+  <i>Get instant stats through TMDB API-powered movie app, beautifully crafted with React and styled components 💅</i>
 </p>
 
 ## Table of Contents 📄
