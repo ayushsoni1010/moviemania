@@ -10,6 +10,7 @@
 </p>
 
 ## Table of Contents 📄
+
 - [Introduction](#introduction-)
 - [Getting Started](#getting-started-)
 - [Available Scripts](#available-scripts-)
@@ -26,22 +27,30 @@ Welcome to MovieMania, where the world of cinema comes to life on your screen! O
 To get started with MovieMania, follow the installation and usage instructions below.
 
 1. Clone the repository to your local machine:
+
 ```bash
 git clone https://github.com/ayushsoni1010/moviemania.git
 ```
+
 2. Navigate to the project directory:
+
 ```bash
 cd moviemania
 ```
+
 3. Install the required dependencies:
+
 ```bash
 yarn install
 ```
+
 4. Configure the environment variables, if necessary.
 5. Start the development server:
+
 ```bash
 yarn start
 ```
+
 6. Open your favorite web browser and visit http://localhost:3000 to explore MovieMania.\
    The page will automatically reload when you make changes, and you can check the console for any lint errors or development insights.
 
@@ -50,27 +59,32 @@ yarn start
 In the project directory, you can run the following scripts:
 
 1. Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
 ```bash
 yarn start
 ```
 
 2. Run the test runner in interactive watch mode. For more information on running tests, check the [Create React App documentation](https://create-react-app.dev/docs/running-tests/).
+
 ```bash
 yarn test
 ```
 
 3. Builds the app for production, optimizing its performance and generating files in the build folder. Your app is now ready for deployment.
+
 ```bash
 yarn build
 ```
 
 4. If you're not satisfied with the build tool and configuration choices, you can eject at any time. This command will copy all configuration files and dependencies into your project, giving you full control over them. Most commands except eject will still work, but they will point to the copied scripts for you to customize as needed.\
-  \
-  Remember, you don't have to use eject if the default configuration meets your needs.
+   \
+   Remember, you don't have to use eject if the default configuration meets your needs.
+
 ```bash
 yarn eject
 ```
+
 `Note: This is a one-way operation. Once you eject, you can't go back!`
 
 ## Learn More 📚
